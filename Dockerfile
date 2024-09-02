@@ -1,7 +1,7 @@
 # Docker image customizing
 # source: https://github.com/cloudposse/geodesic#customizing-your-docker-image
 # renovate: datasource=docker depName=cloudposse/geodesic versioning=docker
-ARG GEODESIC_VERSION=3.1.0
+ARG GEODESIC_VERSION=2.0.0
 ARG GEODESIC_OS=debian
 ARG ATMOS_VERSION=1.70.0
 # renovate: depName=terraform
