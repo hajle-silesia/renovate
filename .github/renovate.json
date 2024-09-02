@@ -6,13 +6,11 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^Dockerfile$"
-      ],
+      "description": "Updating annotated package versions in Dockerfiles",
+      "fileMatch": ["^Dockerfile$"],
       "matchStrings": [
-        "#\\s*renovate:\\s*?depName=(?<depName>.*?)?\\sARG .*?_VERSION=\"(?<currentValue>.*)\"\\s"
-      ],
-      "datasourceTemplate": "deb"
+        "# renovate: (datasource=(?<datasource>\\S+))? ?(depName=(?<depName>\\S+))? ?(registryUrl=(?<registryUrl>\\S+))? ?(versioning=(?<versioning>\\s+))?\\n(ENV|ARG) [\\S]+_VERSION=(?<currentValue>\\S+)"
+      ]
     }
   ]
 }
