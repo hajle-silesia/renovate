@@ -6,10 +6,13 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Updating annotated package versions in Dockerfiles",
-      "fileMatch": ["^Dockerfile$"],
+      "description": "Update _VERSION variables in Dockerfiles; source: https://docs.renovatebot.com/modules/manager/regex/#configuration-templates",
+      "fileMatch": [
+        "(^|/|\\.)Dockerfile$",
+        "(^|/)Dockerfile\\.[^/]*$"
+      ],
       "matchStrings": [
-        "#\\s*renovate:\\s*?depName=(?<depName>.*?)?\\s(ARG|ENV) .*?_VERSION=\"(?<currentValue>.*)\"\\s"
+        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?\\s(?:ENV|ARG) .+?_VERSION=(?<currentValue>.+?)\\s"
       ]
     }
   ]
