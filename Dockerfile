@@ -1,6 +1,6 @@
 # Docker image customizing
 # source: https://github.com/cloudposse/geodesic#customizing-your-docker-image
-# renovate: datasource=docker depName=cloudposse/geodesic registryUrl=public.ecr.aws versioning=docker
+# renovate: datasource=docker depName=cloudposse/geodesic versioning=docker
 ARG GEODESIC_VERSION=3.1.0
 
 ARG GEODESIC_OS=debian
@@ -12,7 +12,7 @@ ARG TFLINT_VERSION=0.53.0
 ARG TRIVY_VERSION=0.54.1
 ARG CHECKOV_VERSION=3.2.238
 
-FROM public.ecr.aws/cloudposse/geodesic:$GEODESIC_VERSION-$GEODESIC_OS
+FROM cloudposse/geodesic:$GEODESIC_VERSION-$GEODESIC_OS
 
 ENV BANNER="local-dev"
 
