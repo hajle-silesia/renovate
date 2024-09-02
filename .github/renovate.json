@@ -11,7 +11,7 @@
         "^Dockerfile$"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?\\s(?:ARG|ENV) .+?_VERSION=(?<currentValue>.+?)\\s"
+        "# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>.+?) versioning=(?<versioning>[a-z-]+?)\\s(?:ARG|ENV) .+?_VERSION=(?<currentValue>.+?)\\s"
       ]
     }
   ]
