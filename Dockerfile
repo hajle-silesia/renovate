@@ -11,7 +11,7 @@ ARG TFLINT_VERSION=0.53.0
 ARG TRIVY_VERSION=0.54.1
 ARG CHECKOV_VERSION=3.2.238
 
-FROM cloudposse/geodesic:$GEODESIC_VERSION-$GEODESIC_OS
+FROM cloudposse/geodesic:3.1.0-debian
 
 ENV BANNER="local-dev"
 
