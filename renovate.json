@@ -11,7 +11,7 @@
         "^Dockerfile$"
       ],
       "matchStrings": [
-        "# renovate: (datasource=(?<datasource>\\S+))? ?(depName=(?<depName>\\S+))? ?(registryUrl=(?<registryUrl>\\S+))? ?(versioning=(?<versioning>\\S+))?\\S+(ARG|ENV) [\\S]+_VERSION=(?<currentValue>\\S+)"
+        "# renovate: (datasource=(?<datasource>\\S+))? ?(depName=(?<depName>\\S+))? ?(registryUrl=(?<registryUrl>\\S+))? ?(versioning=(?<versioning>\\S+))?\\\\n(ARG|ENV) [\\S]+_VERSION=(?<currentValue>\\S+)"
       ]
     }
   ]
