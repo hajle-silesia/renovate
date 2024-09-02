@@ -9,7 +9,7 @@
       "description": "Updating annotated package versions in Dockerfiles",
       "fileMatch": ["^Dockerfile$"],
       "matchStrings": [
-        "# renovate: (datasource=(?<datasource>\\S+))? ?(depName=(?<depName>\\S+))? ?(registryUrl=(?<registryUrl>\\S+))? ?(versioning=(?<versioning>\\s+))?\\n(ENV|ARG) [\\S]+_VERSION=(?<currentValue>\\S+)"
+        "#\\s*renovate:\\s*?depName=(?<depName>.*?)?\\s(ARG|ENV) .*?_VERSION=\"(?<currentValue>.*)\"\\s"
       ]
     }
   ]
