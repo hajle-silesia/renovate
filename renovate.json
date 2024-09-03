@@ -10,7 +10,7 @@
         "^Dockerfile$"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s*?depName=(?<depName>.*?)?\\sARG .*?_VERSION=(?<currentValue>.*)\\s"
+        "#\\s*renovate:\\s*?datasource=(?<datasource>.*?)? depName=(?<depName>.*?)? cargo=(?<cargo>.*?)?\\sARG .*?_VERSION=(?<currentValue>.*?)?\\s"
       ],
       "datasourceTemplate": "deb"
     }

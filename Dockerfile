@@ -4,7 +4,7 @@
 ARG GEODESIC_REPOSITORY=cloudposse/geodesic
 ARG GEODESIC_TAG=3.2.0-debian
 
-# renovate: depName=atmos
+# renovate: datasource=github-releases depName=cloudposse/atmos cargo=">=1.70.0 <2.0.0"
 ARG ATMOS_VERSION=1.70.0
 # renovate: depName=terraform
 ARG TERRAFORM_VERSION=1.9.4
