@@ -12,6 +12,9 @@
       "matchStrings": [
         "#\\s*renovate:\\s*?datasource=(?<datasource>.*?)? depName=(?<depName>.*?)? cargo=(?<cargo>.*?)?\\sARG .*?_VERSION=(?<currentValue>.*?)?\\s"
       ],
+      "registryUrls": [
+        "https://apt.releases.hashicorp.com/debian?suite=stable&components=main,bookworm&binaryArch=amd64"
+      ],
       "datasourceTemplate": "deb"
     }
   ]
