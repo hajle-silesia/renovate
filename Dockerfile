@@ -1,7 +1,6 @@
 # Docker image customizing
 # source: https://github.com/cloudposse/geodesic#customizing-your-docker-image
 
-# renovate: datasource=docker depName=cloudposse/geodesic versioning=docker
 ARG GEODESIC_IMAGE=cloudposse/geodesic:2.0.0-debian
 
 ARG ATMOS_VERSION=1.70.0
