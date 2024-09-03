@@ -2,19 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
-  ],
-  "customManagers": [
-    {
-      "customType": "regex",
-      "description": "Update _VERSION variables in Dockerfiles; source: https://docs.renovatebot.com/modules/manager/regex/#configuration-templates",
-      "fileMatch": [
-        "^Dockerfile$"
-      ],
-      "matchStrings": [
-        "# renovate: (datasource=(?<datasource>\\S+))? ?(depName=(?<depName>\\S+))? ?(registryUrl=(?<registryUrl>\\S+))? ?(versioning=(?<versioning>\\S+))?\\\\n(ARG|ENV) [\\S]+_VERSION=(?<currentValue>\\S+)\\\\n"
-      ],
-      "autoReplaceStringTemplate": "GEODESIC_VERSION={{{newValue}}}",
-      "datasourceTemplate": "docker"
-    }
   ]
 }
