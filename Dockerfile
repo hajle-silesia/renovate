@@ -2,7 +2,7 @@
 # source: https://github.com/cloudposse/geodesic#customizing-your-docker-image
 
 ARG GEODESIC_REPOSITORY=cloudposse/geodesic
-ARG GEODESIC_TAG=2.0.0-debian
+ARG GEODESIC_TAG=3.2.0-debian
 
 ARG ATMOS_VERSION=1.70.0
 # renovate: depName=terraform
