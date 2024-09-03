@@ -1,8 +1,7 @@
 # Docker image customizing
 # source: https://github.com/cloudposse/geodesic#customizing-your-docker-image
 
-ARG GEODESIC_REGISTRY=cloudposse
-ARG GEODESIC_IMAGE=geodesic
+ARG GEODESIC_REPOSITORY=cloudposse/geodesic
 ARG GEODESIC_TAG=2.0.0-debian
 
 ARG ATMOS_VERSION=1.70.0
@@ -12,7 +11,7 @@ ARG TFLINT_VERSION=0.53.0
 ARG TRIVY_VERSION=0.54.1
 ARG CHECKOV_VERSION=3.2.238
 
-FROM ${GEODESIC_REGISTRY}/${GEODESIC_IMAGE}:${GEODESIC_TAG}
+FROM ${GEODESIC_REPOSITORY}:${GEODESIC_TAG}
 
 ENV BANNER="local-dev"
 
