@@ -5,17 +5,11 @@
   ],
   "customManagers": [
     {
-      "customType": "regex",
-      "fileMatch": [
-        "^Dockerfile$"
-      ],
+      "description": "Updating annotated package versions in Dockerfiles",
+      "fileMatch": ["^Dockerfile$"],
       "matchStrings": [
-        "#\\s*renovate:\\s*?datasource=(?<datasource>.*?)? depName=(?<depName>.*?)? cargo=(?<cargo>.*?)?\\sARG .*?_VERSION=(?<currentValue>.*?)?\\s"
-      ],
-      "registryUrls": [
-        "https://apt.releases.hashicorp.com/debian?suite=stable&components=main,bookworm&binaryArch=amd64"
-      ],
-      "datasourceTemplate": "deb"
+        "# renovate: (datasource=(?<datasource>\\S+))? ?(depName=(?<depName>\\S+))? ?(registryUrl=(?<registryUrl>\\S+))? ?(versioning=(?<versioning>\\S+))?\\n(ARG|ENV) [\\S]+_VERSION=(?<currentValue>\\S+)"
+      ]
     }
   ]
 }
