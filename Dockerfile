@@ -9,7 +9,8 @@ ARG ATMOS_VERSION=1.70.0
 # renovate: datasource=github-releases depName=hashicorp/terraform
 ARG TERRAFORM_VERSION=1.9.4
 ARG TFLINT_VERSION=0.53.0
-ARG TRIVY_VERSION=0.54.1
+# renovate: datasource=github-releases depName=cloudposse/packages
+ARG TRIVY_VERSION=0.54.0
 ARG CHECKOV_VERSION=3.2.238
 
 FROM ${GEODESIC_REPOSITORY}:${GEODESIC_TAG}
