@@ -8,8 +8,9 @@ ARG GEODESIC_TAG=3.2.0-debian
 ARG ATMOS_VERSION=1.88.0
 # renovate: datasource=github-releases depName=hashicorp/terraform
 ARG TERRAFORM_VERSION=1.9.5
+# renovate: datasource=github-releases depName=terraform-linters/tflint
 ARG TFLINT_VERSION=0.53.0
-# renovate: datasource=github-releases depName=cloudposse/packages
+# renovate: datasource=github-releases depName=aquasecurity/trivy
 ARG TRIVY_VERSION=0.54.0
 ARG CHECKOV_VERSION=3.2.238
 
