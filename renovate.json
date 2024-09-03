@@ -12,7 +12,9 @@
       ],
       "matchStrings": [
         "# renovate: (datasource=(?<datasource>\\S+))? ?(depName=(?<depName>\\S+))? ?(registryUrl=(?<registryUrl>\\S+))? ?(versioning=(?<versioning>\\S+))?\\\\n(ARG|ENV) [\\S]+_VERSION=(?<currentValue>\\S+)\\\\n"
-      ]
+      ],
+      "autoReplaceStringTemplate": "GEODESIC_VERSION={{{newValue}}}",
+      "datasourceTemplate": "docker"
     }
   ]
 }
