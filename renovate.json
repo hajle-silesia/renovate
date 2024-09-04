@@ -6,7 +6,10 @@
   "customManagers": [
     {
       "description": "Updating annotated package versions in Dockerfiles",
-      "fileMatch": ["^Dockerfile$"],
+      "fileMatch": [
+        "(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$",
+        "(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$"
+      ],
       "matchStrings": [
         "# renovate: (datasource=(?<datasource>\\S+))? ?(depName=(?<depName>\\S+))? ?(registryUrl=(?<registryUrl>\\S+))? ?(versioning=(?<versioning>\\S+))?\\n(ARG|ENV) [\\S]+_VERSION=(?<currentValue>\\S+)"
       ]
