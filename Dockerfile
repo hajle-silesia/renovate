@@ -25,40 +25,48 @@ ENV DOCKER_TAG="latest"
 # sources:
 # https://github.com/cloudposse/geodesic/blob/main/README.md
 # https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    gnupg \
-    software-properties-common
-RUN wget -O- https://apt.releases.hashicorp.com/gpg | \
-    gpg --dearmor | \
-    tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
-RUN gpg --no-default-keyring \
-    --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg \
-    --fingerprint
-RUN echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
-    https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
-    tee /etc/apt/sources.list.d/hashicorp.list
-
-# Terraform installation
-ARG TERRAFORM_VERSION
-RUN apt-get update && apt-get install -y --allow-downgrades --no-install-recommends \
-    terraform="${TERRAFORM_VERSION}-*"
-
-# Atmos installation
-ARG ATMOS_VERSION
-RUN apt-get update && apt-get install -y --allow-downgrades --no-install-recommends \
-    atmos="${ATMOS_VERSION}-*"
-
-# TFLint installation
-ARG TFLINT_VERSION
-RUN apt-get update && apt-get install -y --allow-downgrades --no-install-recommends \
-    tflint="${TFLINT_VERSION}-*"
-
-# Trivy installation
-ARG TRIVY_VERSION
-RUN apt-get update && apt-get install -y --allow-downgrades --no-install-recommends \
-    trivy="${TRIVY_VERSION}-*"
+#RUN apt-get update && apt-get install -y --no-install-recommends \
+#    gnupg \
+#    software-properties-common
+#RUN wget -O- https://apt.releases.hashicorp.com/gpg | \
+#    gpg --dearmor | \
+#    tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+#RUN gpg --no-default-keyring \
+#    --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg \
+#    --fingerprint
+#RUN echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+#    https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
+#    tee /etc/apt/sources.list.d/hashicorp.list
+#
+## Terraform installation
+#ARG TERRAFORM_VERSION
+#RUN apt-get update && apt-get install -y --allow-downgrades --no-install-recommends \
+#    terraform="${TERRAFORM_VERSION}-*"
+#
+## Atmos installation
+#ARG ATMOS_VERSION
+#RUN apt-get update && apt-get install -y --allow-downgrades --no-install-recommends \
+#    atmos="${ATMOS_VERSION}-*"
+#
+## TFLint installation
+#ARG TFLINT_VERSION
+#RUN apt-get update && apt-get install -y --allow-downgrades --no-install-recommends \
+#    tflint="${TFLINT_VERSION}-*"
+#
+## Trivy installation
+#ARG TRIVY_VERSION
+#RUN apt-get update && apt-get install -y --allow-downgrades --no-install-recommends \
+#    trivy="${TRIVY_VERSION}-*" \
 
 ## Checkov installation
 #ARG CHECKOV_VERSION
 #RUN apt-get update && apt-get install -y --allow-downgrades \
 #    checkov="${CHECKOV_VERSION}-*"
+
+# MISE TAKE TWO
+SHELL ["/bin/bash", "-c"]
+RUN curl https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise MISE_VERSION=v2024.5.17 sh
+RUN echo 'eval "$(/usr/local/bin/mise activate bash)"' >> ~/.profile
+COPY .mise.toml /etc/mise/config.toml
+RUN mise install -y
+SHELL ["/bin/bash", "-l", "-c"]
