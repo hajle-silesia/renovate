@@ -11,7 +11,7 @@ ARG TERRAFORM_VERSION=1.9.5
 # renovate: datasource=github-releases depName=terraform-linters/tflint
 ARG TFLINT_VERSION=0.53.0
 # renovate: datasource=github-releases depName=aquasecurity/trivy
-ARG TRIVY_VERSION=0.54.1
+ARG TRIVY_VERSION=0.55.0
 ARG CHECKOV_VERSION=3.2.238
 
 FROM ${GEODESIC_REPOSITORY}:${GEODESIC_TAG}
