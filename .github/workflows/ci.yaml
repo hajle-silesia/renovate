@@ -1,6 +1,14 @@
 name: ci
 
 on:
+  push:
+    branches:
+      - 'master'
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - 'master'
   workflow_dispatch:
 
 jobs:
@@ -31,3 +39,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+
+# https://stackoverflow.com/questions/55044480/tagging-docker-image-semver
