@@ -41,5 +41,4 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-
 # https://stackoverflow.com/questions/55044480/tagging-docker-image-semver
