@@ -3,12 +3,12 @@ name: CI
 on:
   push:
     branches:
-      - 'master'
+      - master
     tags:
-      - '*.*.*'
+      - 'v*.*.*'
   pull_request:
     branches:
-      - 'master'
+      - master
   workflow_dispatch:
 
 jobs:
@@ -25,7 +25,11 @@ jobs:
             mtweeman/hajle-silesia_provisioning-ld
           tags: |
             type=semver,pattern={{version}}
+            type=semver,pattern={{major}}
+            type=semver,pattern={{major}}.{{minor}}
             type=sha
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Login to Docker Hub
