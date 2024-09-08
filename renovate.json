@@ -22,7 +22,8 @@
       "matchStrings": [
         "node-version: (?<currentValue>\\S+)"
       ],
-      "datasourceTemplate": "node-version"
+      "datasourceTemplate": "node",
+      "depNameTemplate": "node"
     },
     {
       "description": "Update semantic-release version used by npx",
