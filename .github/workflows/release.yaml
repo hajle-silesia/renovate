@@ -23,6 +23,10 @@ jobs:
           # prevent semantic-release from making changes by "github-actions" user as it doesn't trigger other workflows
           # source: https://github.com/semantic-release/semantic-release/blob/8fda7fd423d24e7b425fbee83790f49dd0478e2d/docs/recipes/ci-configurations/github-actions.md#pushing-packagejson-changes-to-a-master-branch
           persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
       - name: Set up semantic-release
         run: |
           npx semantic-release@24.1.0
