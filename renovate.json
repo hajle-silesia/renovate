@@ -20,7 +20,7 @@
         "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
       ],
       "matchStrings": [
-        "run: (|\\n)? ?npx semantic-release@(?<currentValue>\\S+)"
+        "run: (\\|\\n)? *npx semantic-release@(?<currentValue>\\S+)"
       ],
       "datasourceTemplate": "npm",
       "depNameTemplate": "semantic-release"
