@@ -20,6 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          # prevent semantic-release from making changes by "github-actions" user as it doesn't trigger other workflows
           persist-credentials: false
       - name: Set up Node
         uses: actions/setup-node@v4
