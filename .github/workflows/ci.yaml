@@ -7,6 +7,9 @@ on:
     tags:
       - v*.*.*
   pull_request:
+  repository_dispatch:
+    types:
+      - release
   workflow_dispatch:
 
 jobs:
