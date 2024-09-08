@@ -17,10 +17,10 @@
     {
       "description": "Update semantic-release version used by npx",
       "fileMatch": [
-        "^\\.github/workflows/[^/]+\\.ya?ml$"
+        "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
       ],
       "matchStrings": [
-        "\\srun: npx semantic-release@(?<currentValue>.*?)\\s"
+        "run: (|\\n)? ?npx semantic-release@(?<currentValue>\\S+)"
       ],
       "datasourceTemplate": "npm",
       "depNameTemplate": "semantic-release"
