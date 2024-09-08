@@ -24,13 +24,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 21
-      - name: Install plugins
-        run: |
-          npm install -D \
-            @semantic-release/git \
-            @semantic-release/changelog
       - name: Release
         run: |
-          npx semantic-release
+          npx semantic-release@21
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
