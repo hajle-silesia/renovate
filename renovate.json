@@ -13,6 +13,17 @@
       "matchStrings": [
         "# renovate: (datasource=(?<datasource>\\S+))? ?(depName=(?<depName>\\S+))? ?(registryUrl=(?<registryUrl>\\S+))? ?(versioning=(?<versioning>\\S+))?\\n(ARG|ENV) [\\S]+_VERSION=(?<currentValue>\\S+)"
       ]
+    },
+    {
+      "description": "Update semantic-release version used by npx",
+      "fileMatch": [
+        "^\\.github/workflows/[^/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "\\srun: npx semantic-release@(?<currentValue>.*?)\\s"
+      ],
+      "datasourceTemplate": "npm",
+      "depNameTemplate": "semantic-release"
     }
   ]
 }
