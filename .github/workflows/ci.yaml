@@ -4,12 +4,9 @@ on:
   push:
     branches:
       - master
+    tags:
+      - v*.*.*
   pull_request:
-  workflow_run:
-    workflows:
-      - release
-    types:
-      - completed
   workflow_dispatch:
 
 jobs:
