@@ -2,8 +2,6 @@ name: CI
 
 on:
   push:
-    branches:
-      - master
     tags:
       - v*.*.*
   pull_request:
@@ -23,9 +21,9 @@ jobs:
           images: |
             mtweeman/hajle-silesia_provisioning-ld
           tags: |
-            type=ref,event=branch,pattern={{version}}
-            type=ref,event=branch,pattern={{major}}.{{minor}}
-            type=ref,event=branch,pattern={{major}}
+            type=ref,event=tag,pattern={{version}}
+            type=ref,event=tag,pattern={{major}}.{{minor}}
+            type=ref,event=tag,pattern={{major}}
             type=ref,event=pr
             type=sha
       - name: Set up QEMU
