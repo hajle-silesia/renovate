@@ -24,6 +24,6 @@ jobs:
           node-version: 21
       - name: Release
         run: |
-          npx semantic-release@21
+          npx semantic-release@21.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
