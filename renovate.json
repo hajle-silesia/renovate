@@ -15,6 +15,16 @@
       ]
     },
     {
+      "description": "Update semantic-release version used by Node.js",
+      "fileMatch": [
+        "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "node-version: (?<currentValue>\\S+)"
+      ],
+      "datasourceTemplate": "node-version"
+    },
+    {
       "description": "Update semantic-release version used by npx",
       "fileMatch": [
         "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
