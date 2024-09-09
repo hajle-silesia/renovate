@@ -2,4 +2,4 @@
 terraform = '1.9.4'
 tflint = '0.52.0'
 trivy = '0.54.1'
-pre-commit = '3.7.0'
+pre-commit = '3.8.0'
