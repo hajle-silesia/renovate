@@ -1,3 +1,5 @@
 [tools]
-trivy = '0.55.0'
-terraform = '1.9.5'
+terraform = '1.9.4'
+tflint = '0.52.0'
+trivy = '0.54.1'
+pre-commit = '3.7.0'
