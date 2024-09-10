@@ -20,7 +20,7 @@ ARG MISE_VERSION
 ARG MISE_INSTALL_PATH="/usr/local/bin/mise"
 RUN curl https://mise.run | MISE_INSTALL_PATH="${MISE_INSTALL_PATH}" MISE_VERSION="${MISE_VERSION}" sh
 #RUN echo "eval \"\$(${MISE_INSTALL_PATH} activate bash)\"" >> ~/.profile
-ENV PATH="${PATH}:$(mise activate bash --shims)"
+ENV PATH="$PATH:$MISE_DATA_DIR/shims"
 # source: https://mise.jdx.dev/configuration.html#system-config-etc-mise-config-toml
 COPY .mise.toml /etc/mise/config.toml
 # source: https://mise.jdx.dev/cli/install.html
