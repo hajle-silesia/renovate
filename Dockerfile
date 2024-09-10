@@ -2,7 +2,7 @@
 # source: https://github.com/cloudposse/geodesic#customizing-your-docker-image
 
 ARG GEODESIC_REPOSITORY=cloudposse/geodesic
-ARG GEODESIC_TAG=3.2.0-debian
+ARG GEODESIC_TAG=3.3.0-debian
 
 # renovate: datasource=github-releases depName=jdx/mise
 ARG MISE_VERSION=v2024.9.0
@@ -19,7 +19,8 @@ ENV DOCKER_TAG="latest"
 ARG MISE_VERSION
 ARG MISE_INSTALL_PATH="/usr/local/bin/mise"
 RUN curl https://mise.run | MISE_INSTALL_PATH="${MISE_INSTALL_PATH}" MISE_VERSION="${MISE_VERSION}" sh
-RUN echo "eval \"\$(${MISE_INSTALL_PATH} activate bash)\"" >> ~/.profile
+#RUN echo "eval \"\$(${MISE_INSTALL_PATH} activate bash)\"" >> ~/.profile
+RUN mise activate bash --shims >> ~/.profile
 # source: https://mise.jdx.dev/configuration.html#system-config-etc-mise-config-toml
 COPY .mise.toml /etc/mise/config.toml
 # source: https://mise.jdx.dev/cli/install.html
