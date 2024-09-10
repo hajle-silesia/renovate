@@ -19,10 +19,15 @@ ENV DOCKER_TAG="latest"
 ARG MISE_VERSION
 ARG MISE_INSTALL_PATH="/usr/local/bin/mise"
 ARG MISE_DATA_DIR="/usr/share/xdg_data_home/mise"
-RUN curl https://mise.run | MISE_INSTALL_PATH="${MISE_INSTALL_PATH}" MISE_VERSION="${MISE_VERSION}" sh
-#RUN echo "eval \"\$(${MISE_INSTALL_PATH} activate bash)\"" >> ~/.profile
-ENV PATH="$PATH:${MISE_DATA_DIR}/shims"
+RUN curl https://mise.run | \
+    MISE_VERSION="${MISE_VERSION}" \
+    MISE_INSTALL_PATH="${MISE_INSTALL_PATH}" \
+    MISE_DATA_DIR="${MISE_DATA_DIR}" \
+    sh
+ENV PATH="${MISE_DATA_DIR}/shims:$PATH"
+# defaults for all users
 # source: https://mise.jdx.dev/configuration.html#system-config-etc-mise-config-toml
 COPY .mise.toml /etc/mise/config.toml
+# install tools
 # source: https://mise.jdx.dev/cli/install.html
 RUN mise install --yes
