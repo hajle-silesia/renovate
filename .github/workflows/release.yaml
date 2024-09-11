@@ -24,6 +24,6 @@ jobs:
           node-version: v22.8.0
       - name: Set up semantic-release
         run: |
-          npx semantic-release@24.1.0
+          npx semantic-release@24.1.1
         env:
           GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
