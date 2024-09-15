@@ -1,0 +1,33 @@
+default_install_hook_types:
+  - pre-commit
+  - pre-push
+repos:
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.92.2
+    hooks:
+      - id: terraform_fmt
+        stages:
+          - manual
+          - pre-commit
+          - pre-push
+      - id: terraform_tflint
+        stages:
+          - manual
+          - pre-commit
+          - pre-push
+      - id: terraform_validate
+        args:
+          - --tf-init-args=-backend=false
+        stages:
+          - manual
+          - pre-push
+      - id: terraform_trivy
+        args:
+          - --args=--severity=MEDIUM,HIGH,CRITICAL
+          - --args=--ignorefile .trivyignore.yaml
+          # race condition observed with parallelism enabled, especially in CI/CD workflows
+          # ref: https://github.com/aquasecurity/trivy/discussions/7139
+          - --hook-config=--parallelism-limit=1
+        stages:
+          - manual
+          - pre-push

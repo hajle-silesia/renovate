@@ -15,7 +15,7 @@
       ]
     },
     {
-      "description": "Update semantic-release version used by Node.js",
+      "description": "Updating semantic-release version used by Node.js",
       "fileMatch": [
         "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
       ],
@@ -26,7 +26,7 @@
       "depNameTemplate": "node"
     },
     {
-      "description": "Update semantic-release version used by npx",
+      "description": "Updating semantic-release version used by npx",
       "fileMatch": [
         "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
       ],
@@ -36,5 +36,8 @@
       "datasourceTemplate": "npm",
       "depNameTemplate": "semantic-release"
     }
-  ]
+  ],
+  "pre-commit": {
+    "enabled": true
+  }
 }
