@@ -1,0 +1,39 @@
+components:
+  terraform:
+    admin-stack/default:
+      metadata:
+        type: abstract
+        component: spacelift/admin-stack
+      settings:
+        spacelift:
+          administrative: true
+          autodeploy: true
+#          before_apply:
+#            - spacelift-configure-paths
+#          before_init:
+#            - spacelift-configure-paths
+#            - spacelift-write-vars
+#            - spacelift-tf-workspace
+#          before_plan:
+#            - spacelift-configure-paths
+          drift_detection_enabled: true
+          drift_detection_reconcile: true
+          drift_detection_schedule:
+            - 0 4 * * *
+          manage_state: false
+          policies: {}
+      vars:
+        # Organization specific configuration
+        branch: master
+        repository: provisioning
+        allow_public_workers: true
+        runner_image: mtweeman/hajle-silesia_provisioning-toolbox:0.9.3
+        spacelift_spaces_tenant_name: root
+        spacelift_spaces_stage_name: spacelift
+        spacelift_spaces_component_name: spaces
+        # These values need to be manually updated as external configuration changes
+        # This should match the version set in the Dockerfile and be updated when the version changes.
+        terraform_workflow_tool: CUSTOM
+        # Common configuration
+        administrative: true # Whether this stack can manage other stacks
+        component_root: components/terraform
