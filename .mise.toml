@@ -1,0 +1,10 @@
+[tools]
+k3s = '1.30.0+k3s1'
+oci = '3.46.0'
+terraform = '1.9.8'
+atmos = '1.88.0'
+tflint = '0.52.0'
+trivy = '0.56.2'
+pre-commit = '4.0.1'
+helm = '3.16.2'
+packer = '1.11.1'
