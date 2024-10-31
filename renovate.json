@@ -5,6 +5,16 @@
   ],
   "customManagers": [
     {
+      "description": "Updating unannotated Docker image versions in YAML files",
+      "fileMatch": [
+        "(^|/)*.ya?ml$"
+      ],
+      "matchStrings": [
+        "image: ?(?<depName>\\S+):(?<currentValue>\\S+)"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
       "customType": "regex",
       "description": "Updating annotated package versions in Dockerfiles",
       "fileMatch": [
