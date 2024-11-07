@@ -12,7 +12,7 @@ jobs:
     name: Atmos infrastructure CD
     runs-on: ubuntu-latest
     container:
-      image: mtweeman/hajle-silesia_provisioning-toolbox:0.12.2
+      image: mtweeman/hajle-silesia_provisioning-toolbox:0.13.1
 
     steps:
       - name: Checkout
