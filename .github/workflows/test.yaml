@@ -23,7 +23,7 @@ jobs:
           pwd
           whoami
       - name: Atmos affected
-        uses: cloudposse/github-action-atmos-affected-stacks@v5
+        uses: cloudposse/github-action-atmos-affected-stacks@v6
         with:
           atmos-config-path: rootfs/usr/local/etc/atmos
           install-atmos: false
