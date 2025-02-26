@@ -1,4 +1,4 @@
-boto3==1.37.1
+boto3==1.37.2
 pandas==2.2.3
 numpy==2.2.3
 scipy==1.15.2
